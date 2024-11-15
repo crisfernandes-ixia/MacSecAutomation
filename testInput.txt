@@ -1,0 +1,126 @@
+**Global**
+app_server=localhost
+rest_session=1
+user=admin
+password=IxNetwork2022!
+rest_port=11009
+test_chassis_ip=10.80.81.2
+
+
+**Test_1**
+man_test_ports = 2/1,2/2
+opt_port_media = copper
+opt_port_speed = speed1000
+
+man_config_stack = static_l2,mka
+opt_config_ipv4 = 101.1.1.1,101.1.2.1
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:83,6c:6c:d3:ac:6a:84
+opt_config_dut_mac = 6c:6c:d3:ac:6a:8b,6c:6c:d3:ac:6a:8c
+#opt_supported_cipher_suites = gcm_aes_xpn_256
+opt_mka_keyServerPriority = 70
+#opt_stack_multiplier = 1
+#opt_vlan = 100
+#opt_encrypt_vlan = 100
+#opt_clear_text_vlan = True
+#opt_incrementing_Pn_Count = 1000
+opt_end_station = True
+opt_cak_name = f123456789abcdef
+opt_cak_value = f123456789abcdef0123456789abcdeff123456789abcdef0123456789abcdef
+
+#man_traffic_type = ipv4
+man_traffic_type = ethernetVlan
+man_traffic_pkt_sizes = 64,72,84,96,128,256,512,768,1024,1280,1486
+
+
+
+opt_dont_cleanup = False
+
+***********************************************************************
+
+**Test_2**
+man_test_ports = 2/1,2/2
+opt_port_media = copper
+opt_port_speed = speed1000
+
+man_config_stack = static_l2
+#opt_config_ipv4 = 101.1.1.1,101.1.2.1
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:83,6c:6c:d3:ac:6a:84
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:8b,6c:6c:d3:ac:6a:8c
+#opt_supported_cipher_suites = gcm_aes_xpn_256 
+opt_incrementing_Pn_Count = 5000
+opt_vlan = 100
+opt_clear_text_vlan = True
+
+opt_txsak_pool = f123456789caffee0123456789abcdef
+opt_rxsak_pool = f123456789caffee0123456789abcdef
+
+#man_traffic_type = ipv4
+man_traffic_type = ethernetVlan
+man_traffic_pkt_sizes = 512
+opt_num_pkts_to_send = 10000
+
+opt_dont_cleanup = False
+
+***********************************************************************
+
+**Test_3**
+man_test_ports = 2/1,2/2
+opt_port_media = copper
+opt_port_speed = speed1000
+
+man_config_stack = static_l2,mka
+opt_config_ipv4 = 101.1.1.1,101.1.2.1
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:83,6c:6c:d3:ac:6a:84
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:8b,6c:6c:d3:ac:6a:8c
+#opt_supported_cipher_suites = gcm_aes_xpn_256
+#opt_mka_keyServerPriority = 70
+#opt_stack_multiplier = 1
+#opt_vlan = 100
+#opt_encrypt_vlan = 100
+#opt_clear_text_vlan = True
+#opt_incrementing_Pn_Count = 1000
+opt_end_station = True
+opt_cak_name = f123456789abcdef
+opt_cak_value = f123456789abcdef0123456789abcdeff123456789abcdef0123456789abcdef
+opt_rekey_type = cont_time
+#opt_rekey_type = fix_time
+#opt_rekey_type = pn_base
+#opt_rekey_type = xpn_base
+opt_rekey_value = 30
+#opt_rekey_value =c0000000
+
+man_traffic_type = ethernetVlan
+man_traffic_pkt_sizes = 512
+
+********************************************************************************************
+
+**Test_4**
+man_test_ports = 2/1,2/2
+opt_port_media = copper
+opt_port_speed = speed1000
+
+man_config_stack = static_l4,mka
+opt_config_ipv4 = 101.1.1.1,101.1.1.100
+opt_config_ipv4_gw = 101.1.1.100,101.1.1.1
+
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:83,6c:6c:d3:ac:6a:84
+#opt_config_dut_mac = 6c:6c:d3:ac:6a:8b,6c:6c:d3:ac:6a:8c
+#opt_supported_cipher_suites = gcm_aes_xpn_256
+#opt_mka_keyServerPriority = 70
+opt_stack_multiplier = 9
+#opt_vlan = 100
+#opt_encrypt_vlan = 100
+#opt_clear_text_vlan = True
+#opt_incrementing_Pn_Count = 1000
+opt_end_station = True
+opt_cak_name = f123456789abcdef
+opt_cak_value = f123456789abcdef0123456789abcdeff123456789abcdef0123456789abcdef
+opt_rekey_type = cont_time
+#opt_rekey_type = fix_time
+#opt_rekey_type = pn_base
+#opt_rekey_type = xpn_base
+opt_rekey_value = 30
+#opt_rekey_value =c0000000
+
+man_traffic_type = appLib_http
+
