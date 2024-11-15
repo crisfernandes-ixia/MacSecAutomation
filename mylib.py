@@ -409,10 +409,11 @@ def wait_for_traffic_to_stop(my_vars, send_stop_cmd = False):
             ix_net.info('Stats is not ready after 5 mins.')
             break
         time.sleep(5)
-
 def print_results(my_vars, test_key):
     data = my_vars[test_key]['traff_results']
-    print(json.dumps(data, indent=4))
+    ix_net = my_vars['Global']['session'].Ixnetwork
+    ix_net.info(json.dumps(data, indent=4))
+
 
 # Function to create and print the table with the absolute differences
 def create_table_with_diff(headers, data1, data2):
