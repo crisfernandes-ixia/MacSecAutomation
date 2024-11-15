@@ -60,6 +60,11 @@ def my_test_case_1():
     #vport.Capture.HardwareEnabled = True
 
     my_vars[test_key]['traff_results'] = dict()
+
+    # Fixing a bug if user inputs only 1 pkt size it becomes and int and not a list as expected.
+    if isinstance(my_vars[test_key]['man_traffic_pkt_sizes'], int):
+        my_vars[test_key]['man_traffic_pkt_sizes'] = [my_vars[test_key]['man_traffic_pkt_sizes']]
+    
     for pkt_size in my_vars[test_key]['man_traffic_pkt_sizes']:
         ix_net.info(f"Step {step.add()} - Test - Modify Traffic Packet Size to {pkt_size} and applying traffic.")
         modify_traffic(my_vars, test_key, 'fixed_pkt_size', pkt_size)
